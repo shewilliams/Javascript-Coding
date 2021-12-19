@@ -2,18 +2,18 @@
 <head>
   <meta charset="utf-8">
   <title>Sheryl's Code for Chapter 11</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
-  <link rel="stylesheet" href="../ch10/leaflet.css" />
+  <link rel="stylesheet" href="./ch10/leaflet.css" />
 </head>
 
 <div style="width: 100%">
     <div class="sidenav">
       <ul>
-       <li><a href="../index.html">Home</a></li>
-       <li><a href="../project/project.html">Project</a></li>
+       <li><a href="./index.html">Home</a></li>
+       <li><a href="./project/project.html">Project</a></li>
      </ul>
     </div>
 
@@ -22,9 +22,9 @@
 <div class="content">
   <h1>Chapter 11</h1>
   <p>1. Design the data structure of your own final project and begin collecting data for it in a spreadsheet.<br>
-    <p>Data for project can be found here: <a href="../project/meteorite.geo.json">Meteorites</a></p>
+    <p>Data for project can be found here: <a href="./project/meteorite.geo.json">Meteorites</a></p>
     2. Create new HTML and JavaScript documents for your project and get your own personal GeoJSON data, or at least as much as you have, plotted.
-  <p>This is a link to the new <a href="../project/project.html">HTML</a> and new <a href="../project/project.js">JavaScript</a> document.</p>
+  <p>This is a link to the new <a href="./project/project.html">HTML</a> and new <a href="./project/project.js">JavaScript</a> document.</p>
 <br>
   <h1>“Could Be,” by Langston Hughes</h1>
   <div id="could-be-map" class="map"></div>
@@ -34,7 +34,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
-<script src="../ch11/could-be.js"></script>
+<script src="./ch11/could-be.js"></script>
 
 
 <body>
@@ -81,7 +81,7 @@
     let md;<br>
     md = window.markdownit({html: true}).use(window.markdownitFootnote);<br>
     $.ajax({<br>
-      url: "../ch12/readme.md",<br>
+      url: "./ch12/readme.md",<br>
       success: function(markdown){<br>
         let html;<br>
         html = md.render(markdown);<br>

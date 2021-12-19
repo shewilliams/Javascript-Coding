@@ -35,7 +35,7 @@ $.getJSON("./could-be.geo.json", function(data){
 let md;
 md = window.markdownit({html: true}).use(window.markdownitFootnote);
 $.ajax({
-  url: "../ch12/readme.md",
+  url: "./ch12/readme.md",
   success: function(markdown){
     let html;
     html = md.render(markdown);
