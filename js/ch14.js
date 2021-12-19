@@ -58,7 +58,7 @@ $.getJSON("./data/could-be.geo.json", function(data){
     });
   }
   if (document.location.href.match(/[^\/]+$/)[0].match(/be13/) !== null){
-    ["hastings-street", "eighteenth-and-vine",
+    ["#hastings-street", "eighteenth-and-vine",
       "fifth-and-mound", "introduction",
       "lenox-avenue", "rampart"].forEach(function(tab){
         // Create a variable tab that has the name as a string.
