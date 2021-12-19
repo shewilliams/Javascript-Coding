@@ -1,6 +1,6 @@
 .parallax {
   /* The image used */
-  background: url('./project/video.mp4') no-repeat fixed center;
+  background: url('../video.mp4') no-repeat fixed center;
   overflow: hidden;
 
   /* Full height */
@@ -15,7 +15,7 @@
 
 .parallax-2 {
   /* The image used */
-  background: url('./project/video.mp4') no-repeat fixed center;
+  background: url('../video.mp4') no-repeat fixed center;
   overflow: hidden;
 
   /* Full height */
@@ -130,7 +130,7 @@ h1 {
   color: #fff;
   background-color: #002269;
 }
-img { 
+#float-right { 
 	float: right;
 	margin: 10px;
 }
