@@ -9,7 +9,7 @@ tileLayer = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/ligh
             }).addTo(map);
 map.setView([40.730833, -73.9975], 16);
 let couldBeFeatures;
-$.getJSON("./ch11/could-be.geo.json", function(data){
+$.getJSON("./data/could-be.geo.json", function(data){
   let couldBeLayer;
   couldBeFeatures = data.features.map(function(feature){
     return {
@@ -49,7 +49,7 @@ $.getJSON("./ch11/could-be.geo.json", function(data){
   couldBeLayer.addTo(map);
   if (document.location.href.match(/[^\/]+$/)[0].match(/be12/) !== null){
     $.ajax({
-      url: "./ch14/ch14/hastings-street.md",
+      url: "./md/hastings-street.md",
       success: function(markdown){
         let html;
         html = md.render(markdown);
@@ -63,7 +63,7 @@ $.getJSON("./ch11/could-be.geo.json", function(data){
       "lenox-avenue", "rampart"].forEach(function(tab){
         // Create a variable tab that has the name as a string.
       $.ajax({
-        url: "/examples/markdown/" + tab + ".md",
+        url: "./md/" + tab + ".md",
         success: function(markdown){
           let html;
           html = md.render(markdown);
@@ -74,7 +74,7 @@ $.getJSON("./ch11/could-be.geo.json", function(data){
   }
   if (document.location.href.match(/[^\/]+$/)[0].match(/be14/) !== null){
     $.ajax({
-      url: "./ch14/ch14/poem.md",
+      url: "./md/poem.md",
       success: function(markdown){
         let html;
         html = md.render(markdown);
@@ -110,7 +110,7 @@ $.getJSON("./ch11/could-be.geo.json", function(data){
       "fifth-and-mound", "introduction",
       "lenox-avenue", "rampart"].forEach(function(tab){
       $.ajax({
-        url: "./ch14/ch14" + tab + ".md",
+        url: "./md/" + tab + ".md",
         success: function(markdown){
           let html;
           html = md.render(markdown);

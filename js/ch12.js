@@ -2,7 +2,7 @@ let md;
 md = window.markdownit({html: true}).use(window.markdownitFootnote);
 // Load the Markdown file with jQuery.
 $.ajax({
-  url: "./ch12/readme.md",
+  url: "./md/readme-12.md",
   success: function(markdown){
     // Convert the Markdown to HTML.
     let html;

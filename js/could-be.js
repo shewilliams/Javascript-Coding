@@ -8,7 +8,7 @@ tileLayer = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/ligh
 map.setView([40.730833, -73.9975], 16);
 
 let couldBeFeatures;
-$.getJSON("./could-be.geo.json", function(data){
+$.getJSON("./data/could-be.geo.json", function(data){
 
   let couldBeLayer;
   couldBeFeatures = data.features.map(function(feature){
@@ -35,7 +35,7 @@ $.getJSON("./could-be.geo.json", function(data){
 let md;
 md = window.markdownit({html: true}).use(window.markdownitFootnote);
 $.ajax({
-  url: "./ch12/readme.md",
+  url: "./md/readme-12.md",
   success: function(markdown){
     let html;
     html = md.render(markdown);

@@ -9,7 +9,7 @@ tileLayer = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/ligh
 map.setView([43.4113, -106.28], 16);
 
 let meteroriteFeatures;
-$.getJSON("../meteorite.geo.json", function(data){
+$.getJSON("./data/meteorite.geo.json", function(data){
   // Define the Leaflet layer.
   let meteroriteLayer;
   meteroriteFeatures = data.features.map(function(feature){
@@ -47,7 +47,7 @@ let md;
 md = window.markdownit({html: true}).use(window.markdownitFootnote);
 // Load the Markdown file for the main content next to the map, with jQuery.
 $.ajax({
-  url: "../introduction.md",
+  url: "./md/introduction.md",
   success: function(markdown){
     // Convert the Markdown to HTML.
     let html1;
@@ -61,7 +61,7 @@ let placesArray;
 placesArray = ["introduction", "willamette", "mbosi", "sikhote-alin", "mundrabilla", "hoba"]
 placesArray.forEach(function(tab){
 $.ajax({ 
-  url: tab + ".md",
+  url: "./md/" + tab + ".md",
   success: function(markdown){
     let html;
     html = md.render(markdown);
