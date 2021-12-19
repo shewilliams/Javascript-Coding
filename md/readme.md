@@ -11,11 +11,11 @@ Data Source: [NASA Open Data](https://data.nasa.gov/Space-Science/Meteorite-Land
 # Sketches
 <section> The sketches below indicate renderings of the project. Parallax scrolling feature will be used.</section>
 
-![First scroll](../first_scroll.png)
+![First scroll](./img/first_scroll.png)
 <section> This part will feature a brief summary of what the user should expect to see on this page and where the data is coming from.
 </section>
 
-![Second scroll](../second_scroll.png)
+![Second scroll](./img/second_scroll.png)
 <section> This part will feature a map and the locations of the top 5 heaviest meteorites found. A brief history will be included. Additionally, the size of the dot on the map will be relative to the weight of the meteorite.
 </section>
 
