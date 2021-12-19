@@ -16,33 +16,71 @@
     <div class="sidenav">
       <ul>
        <li><a href="../index.html">Home</a></li>
-       <li><a href="../project.html">Project</a></li>
+       <li><a href="../project/project.html">Project</a></li>
      </ul>
+    </div>
+
+    <div class="content">
+    <div class="parallax"><br><br>
+      <p class="project-header">What is a meteorite?</p>
+<br><br>
+
+      <p class="project"> <img src="meteorite.png" alt="picture of a meteorite" width="400">
+        
+        You may know them as a shooting or falling star from the sky⁠—they form a fireball, during it's passage through the atmosphere, to reach the surface of a planet. In the simplest terms, a meteorite is a rock that falls to Earth from space. They are usually debris from an object, such as a comet, asteroid, or meteroid. They vary greatly in size! <br><br>
+        
+        This is a project about meteorite landings throughout the world. The data includes the following: name, id, nametype, recclass <i>(material of meteorite)</i>, mass <i>(in g)</i>, fall <i>(recorded as fell or founded)</i>, year <i>(recorded)</i>, reclat, and reclong. The data will feature meteorites that weigh, at and over, 10kg (~20lbs). Additionally, the top five heaviest meteorites will be highlighted. 
+      <br><br>
+      Source of information is from <a href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh" target="_blank">NASA Open Data Portal</a> and <a href="https://ares.jsc.nasa.gov/meteorite-falls/what-are-meteorites/">Astromaterials Research & Exploration Science</a>.
+    </p>
+
+
     </div>
 
 
 
-<div class="content">
-  <h1>Project Meteorites</h1>
+<br><br>
+    <p class="project-header">Where are the heaviest meteorites located?</p>
 
-  <div id="could-be-map" class="map"></div>
+  <div id="meteorite-map" class="map"></div>
 
+
+    <nav id="tabs-nav" class="nav nav-pills mt-3" role="tablist">
+      <a class="nav-link active" href="#introduction" data-toggle="tab" role="tab">Introduction</a>
+      <a class="nav-link" href="#willamette" data-toggle="tab" role="tab">Willamette</a>
+      <a class="nav-link" href="#mbosi" data-toggle="tab" role="tab">Mbosi</a>
+      <a class="nav-link" href="#sikhote-alin" data-toggle="tab" role="tab">Sikhote-Alin</a>
+      <a class="nav-link" href="#mundrabilla" data-toggle="tab" role="tab">Mundrabilla</a>
+      <a class="nav-link" href="#hoba" data-toggle="tab" role="tab">Hoba</a>
+    </nav>
+    <div class="tab-content p-3">
+      <section class="tab-pane active" id="introduction" role="tabpanel"></section>
+      <section class="tab-pane" id="willamette" role="tabpanel"></section>
+      <section class="tab-pane" id="mbosi" role="tabpanel"></section>
+      <section class="tab-pane" id="sikhote-alin" role="tabpanel"></section>
+      <section class="tab-pane" id="mundrabilla" role="tabpanel"></section>
+      <section class="tab-pane" id="hoba" role="tabpanel"></section>
+    </div>
+
+    <div class="parallax"><br><br><br><br>
+      <p class="project-header">Thanks for viewing!</p>
+    </div>
+  </div>
+
+  
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.0/markdown-it.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it-footnote/3.0.1/markdown-it-footnote.js"></script>
 <script src="../project/project.js"></script>
 
 
-<body>
-  <br><br>
-  <code>console.log("Hello, World!");<br><br>
 
-    //Get console.log() to log a string that includes a backslash.<br>
-    console.log("Why hello there \"stranger\"!");<br><br>
 
-    </code>
+<body></body>
 </body>
 
 </div>

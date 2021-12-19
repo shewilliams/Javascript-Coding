@@ -21,8 +21,8 @@
     <div>
       <div class="sidenav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="project.html">Project</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../project/project.html">Project</a></li>
         </ul>
       </div>
 
@@ -37,52 +37,65 @@
       
        <div>
         <h1>Chapter 8</h1><br>
-         <h1>This is my project!</h1><br>
+        <p>
+          1. Flesh out your index.html with a subheading, an image, a few paragraphs, and a link or two.<br>
+          2. Glance over the Bootstrap documentation for images and give your image rounded corners.<br>
+          3. Add some jQuery to scripts.js that selects one (and only one) < p > element and uses .addClass to add the “lead” class to it. Style that class in some distinct way.</p>
+         <h1>This is a colorful webpage!</h1><br>
          <h1 class="second-paragraph">Scroll along!</h1>
-        <div id="response">This is the #response div.</div>
     
        <div id="paragraph">
           <p>This is one paragraph.</p>
 
-         <p class="second-paragraph">This is another paragraph.</p>
+         <p class="second-paragraph">This is another paragraph that turned purple and white.</p>
 
-          <p class="third-paragraph">And lastly, here's another paragraph.</p>
+          <p class="third-paragraph">And lastly, here's another paragraph. The red-colored font doesn't seem to show when it's a class.</p>
+
+          <p id="third-paragraph">However, it does an as an id!</p>
+
+          <p>Oh, hi. Welcome to another paragraph!</p>
+
+          <button>By the way, click me to change the style of a paragraph. :)</button><br><br>
+
         </div>
 
+        
         <div id="link">
-            I'm creating a link to this <a href="http://google.com" target="_blank">website</a>. Check it out!
+          <h1>Have a link or two..</h1><br>
+            I'm creating a link to <a href="http://google.com" target="_blank">Google</a> search (because why not). There's also this <a href="https://letmegooglethat.com">Google</a> search website.
         </div>
 
-        <div id="image">
-            <h1>Here's a photo!</h1>
+        <div id="image"><br>
+            <h1>Here's a photo!</h1><br>
+            <h6>The photo has rounded corners, thanks to Bootstrap!</h6>
             <img src="../ch8/IMG_1148.jpg" class="rounded" alt="This photo is for you! It's nature!" width="480">
         </div>
 
-        <div id="styles">
-            <h1>Different Font Styles</h1>
+        <div id="styles"><br>
+            <h1>Different Font Styles</h1><br>
             This is a <strong>bolded</strong> word.<br>
             This is a <em>italicized</em> words.<br>
             This is an <u>underlined</u> word.<br>
             This is a <strike>strikthrough</strike> word.<br><br>
  
 
-            <h1>Different Font Styles (Code)</h1>
+            <h1>Different Font Styles (Code)</h1><br>
             This is a &lt;strong&gt;bolded&lt;/strong&gt; word.<br>
             This is a &lt;em&gt;italicized&lt;/em&gt; words.<br>
             This is an &lt;u&gt;underlined&lt;/u&gt; word.<br>
             This is a &lt;strike&gt;strikthrough&lt;/strike&gt; word.
         </div>
 
-        <div id="articleandsection">
+        <div id="articleandsection"><br>
             <h1>Article and Section</h1>
             <article>This is an article.
                 <section>This is a section of the article.</section>
-            </article>
+                <section>This seems interesting.</section>
+                <section>There's no need for the br tags.</section>            
+              </article>
         </div>
 
-        <div class="all" id="unique">
-            <button>Click me to hide paragraphs</button>
-
+           
         </div>
     </div>
   </div>  

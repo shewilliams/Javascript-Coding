@@ -1,11 +1,11 @@
 //Parameters Section
-let userInput;
-userInput = prompt("What do you wannt to have for dinner?", "Type your answer here.");
+/*let userInput;
+userInput = prompt("What do you want to have for dinner?", "Type your answer here.");
 
-let promptText, defaultText, userInput;
+let promptText, defaultText, userInput2;
 promptText = "What do you want to have for dinner?";
 defaultText = "Type your answer here.";
-userInput = prompt(promptText, defaultText);
+userInput2 = prompt(promptText, defaultText);*/
 
 //Numbers for a Function
 let tipCalculator;
@@ -14,9 +14,9 @@ tipCalculator = function(total, tipRate){
     let tipAmount;
     tipAmount = tipRate * total;
     //change #response to tell the tip amount
-    $("#response").html("Your tip is $" + tipAmount+ ".");
+    $("#response").html("Your tip is $" + tipAmount + ".");
 }
- tipCalculator(50.00, 0.2);
+tipCalculator(50.00, 0.2);
 
  //Scope Section
  let global;
@@ -31,45 +31,42 @@ tipCalculator = function(total, tipRate){
  };
  globalFunction();
 
- let global;
- global = "🌎";
+ let global2;
+ global2 = "🌎";
  if(true){
      let blocky;
      blocky = "📓";
-     console.log("global is " + global);
+     console.log("global is " + global2);
      console.log("blocky is " + blocky);
+     console.log("Wait, the value of blocky is really " + blocky + "?");
  }
- console.log("Wait, the value of blocky is really " + blocky + "?");
 
-let global;
-global = "🌎";
+
+let global3;
+global3 = "🌎";
 let showMeABurrito = function(){
     let burrito;
     burrito = "🌯";
-    global = "I'm global!";
-    console.log("global is " + global);
+    global3 = "I'm global!";
+    console.log("global is " + global3);
     console.log("burrito is " + burrito);
+    console.log("Wait, the value of burrito is really " + burrito + "?");
 }
 showMeABurrito();
-console.log(global);
-console.log("Wait, the value of burrito is really ") + burrito + "?");
+console.log(global3);
+
 
 //Exercise
 //Add functionality to the tip calculator so that you can enter “20” or “.2”
 //for 20%, and the calculator understands the difference.
-let tipCalculator;
-tipCalculator = function(total, tipRate){
+let tipCalculator2;
+tipCalculator2 = function(total, tipRate){
     //Step 1: Calculate percentage of the total for tip
     let tipAmount;
     tipRate = prompt("Enter in the tip rate.");
-    if(tipRate){
-
-    } else {
-
-    }
-    
+    tipRate = tipRate / 100
     tipAmount = tipRate * total;
     //change #response to tell the tip amount
-    $("#response").html("Your tip is $" + tipAmount+ ".");
+    $("#q-one").html("The tip rate you entered is " + tipRate + ". Your tip is $" + tipAmount+ ".");
 }
- tipCalculator(50.00, 0.2);
+ tipCalculator2(50.00, 0.2);

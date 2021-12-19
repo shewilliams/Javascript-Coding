@@ -30,6 +30,7 @@ turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Spli
 
 
 //Iterating section
+/*
 let userString, upperCaseMinusE, upperCasedString;
 userString = prompt("What do you want to UPPeRCASe?");
 upperCaseMinusE = function(string){
@@ -47,7 +48,7 @@ upperCaseMinusE = function(string){
     return result;
 };
 upperCaseString = upperCaseMinusE(userString);
-$("#response").html(upperCasedString);
+$("#upper-response").html(upperCasedString);*/
 
 let userString2, upperCaseMinusE2, upperCasedString2;
 userString2 = prompt("What do you want to UPPeRCASe?");
@@ -58,7 +59,7 @@ upperCaseMinusE2 = function(string){
         let letter2;
         letter2 = string[i];
         if (letter2 === "e"){
-            //channged line from previous code
+            //changed line from previous code
             result2 = result2 + letter2;
         } else {
             //changed line from previous code
@@ -68,7 +69,7 @@ upperCaseMinusE2 = function(string){
     return result2;
 };
 upperCasedString2 = upperCaseMinusE2(userString2);
-$("#response").html(upperCasedString);
+$("#upper-response2").html(upperCasedString2);
 
 //Array of Objects
 upperCaseMinusE = function(string){
@@ -103,54 +104,54 @@ $("#response").html(weapons);*/
 
 //Mapping & Filtering
 //.map() for whenever you want to build an array out of another array.
-let leonardo, donatello, raphael, michelangelo, allTurtles, weapons;
+let leonardo, donatello, raphael, michelangelo, allTurtles, weapons, allNames, allColors;
 leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};
 donatello = {name: "Donatello", color: "purple", weapon: "bo"};
 raphael = {name: "Raphael", color: "red", weapon: "sai"};
 michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchucks"};
 allTurtles = [leonardo, donatello, raphael, michelangelo];
-weapons = turtles.map(function(turtle){
-    return turtle.weapon;
+allColors = allTurtles.map(function(turtle){
+    return turtle.color;
 }).sort().join(", ");
-$("#response").html(weapons);
+$("#turtle-response").html(allColors);
 
-//returnns list of names
+//returns list of names
 let names;
-names = turtles.map(function(turtle){
+names = allTurtles.map(function(turtle){
     return turtle.name;
 }).sort().join(", ");
-$("#response").html(names);
+$("#turtle-response2").html(names);
 
-//returns list of names without 'o'
-let names, namesWithO;
-names = turtles.map(function(turtle){
+//returns list of names with 'o'
+let namesWithO;
+names = allTurtles.map(function(turtle){
     return turtle.name;
 }).sort();
 namesWithO = names.filter(function(name){
     return name.includes("o");
 }).join(", ");
-$("#response").html(namesWithO);
+$("#turtle-response3").html(namesWithO);
 
 //Exercises
 //Write a function that takes an array of integers and, using .map(),
 //returns an array of those integers, doubled. So if we give it [1, 2, 3], 
 //we receive, in turn, [2, 4, 6].
 let integerArray, double;
-integerArray = [1,2,3];
-somethinng = double.map(function(double){
-    return integerArray * 2;
+integerArray = [1, 2, 3];
+double = integerArray.map(function(value){
+    return value * 2;
 }).sort().join(", ");
-$("#response").html(integerArray);
+$("#q-one").html("The doubled version of integerArray [" + integerArray + "] is [" + double + "].");
 
 //Add functionality to the weapons examples above 
 //so that the final result is “bo, katana, nunchaku, and sai.”
-let leonardo, donatello, raphael, michelangelo, allTurtles, weapons;
+//let leonardo, donatello, raphael, michelangelo, allTurtles, weapons;
 leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};
 donatello = {name: "Donatello", color: "purple", weapon: "bo"};
 raphael = {name: "Raphael", color: "red", weapon: "sai"};
 michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchucks"};
 allTurtles = [leonardo, donatello, raphael, michelangelo];
-weapons = turtles.map(function(turtle){
+weapons = allTurtles.map(function(turtle){
     return turtle.weapon;
 }).sort().join(", ");
-$("#response").html(weapons);
+$("#q-two").html(weapons);

@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <title>Sheryl's Code for Chapter 4</title>
   <link rel="stylesheet" href="../style.css">
-  <script src="/ch4.js"></script>
 </head>
 
 <div style="width: 100%">
@@ -13,7 +12,7 @@
     <div class="sidenav">
       <ul>
        <li><a href="../index.html">Home</a></li>
-       <li><a href="../project.html">Project</a></li>
+       <li><a href="../project/project.html">Project</a></li>
      </ul>
     </div>
 
@@ -21,14 +20,97 @@
 
 <div class="content">
   <h1>Chapter 4</h1>
- <p>hmmm</p>
+ <p>1. Add functionality to the tip calculator so that you can enter “20” or “.2” for 20%, and the calculator understands the difference.
+   <p>Result of code ie below this message. The actual code is at the bottom of this page.</p>
+ </p>
 
+ 
+ <!--
+  This result is from the chapter example. 
+  <div id="response"></div><br>-->
 
+ <div id="q-one"></div><br>
 
 <body>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="../ch4/ch4.js"></script>
-  <br><br>
-  <code>console.log("Hello, World!");<br><br>
+  <h1>Console</h1>
+  <img src="../ch4/ch4_results.png"><br><br>
+  <br>
+  <h1>Coding</h1><br>
+  <code>
+    //Parameters Section<br>
+/*let userInput;<br>
+userInput = prompt("What do you want to have for dinner?", "Type your answer here.");<br><br>
+
+let promptText, defaultText, userInput2;<br>
+promptText = "What do you want to have for dinner?";<br>
+defaultText = "Type your answer here.";<br>
+userInput2 = prompt(promptText, defaultText);*/
+<br><br>
+//Numbers for a Function<br>
+let tipCalculator;<br>
+tipCalculator = function(total, tipRate){<br>
+    //Step 1: Calculate percentage of the total for tip<br>
+    let tipAmount;<br>
+    tipAmount = tipRate * total;<br>
+    //change #response to tell the tip amount<br>
+    $("#response").html("Your tip is $" + tipAmount + ".");<br>
+}<br>
+tipCalculator(50.00, 0.2);<br><br>
+
+ //Scope Section<br>
+ let global;<br>
+ global = "🌎";<br>
+ if(true){<br>
+     console.log(global);<br>
+ };<br><br>
+
+ let globalFunction;<br>
+ globalFunction = function(){<br>
+     console.log(global);<br>
+ };<br>
+ globalFunction();<br><br>
+
+ let global2;<br>
+ global2 = "🌎";<br>
+ if(true){<br>
+     let blocky;<br>
+     blocky = "📓";<br>
+     console.log("global is " + global2);<br>
+     console.log("blocky is " + blocky);<br>
+     console.log("Wait, the value of blocky is really " + blocky + "?");<br>
+ }<br><br>
+
+
+let global3;<br>
+global3 = "🌎";<br>
+let showMeABurrito = function(){<br>
+    let burrito;<br>
+    burrito = "🌯";<br>
+    global3 = "I'm global!";<br>
+    console.log("global is " + global3);<br>
+    console.log("burrito is " + burrito);<br>
+    console.log("Wait, the value of burrito is really " + burrito + "?");<br>
+}<br>
+showMeABurrito();<br>
+console.log(global3);<br><br>
+
+
+//Exercise<br>
+//Add functionality to the tip calculator so that you can enter “20” or “.2”<br>
+//for 20%, and the calculator understands the difference.<br>
+let tipCalculator2;<br>
+tipCalculator2 = function(total, tipRate){<br>
+    //Step 1: Calculate percentage of the total for tip<br>
+    let tipAmount;<br>
+    tipRate = prompt("Enter in the tip rate.");<br>
+    tipRate = tipRate / 100<br>
+    tipAmount = tipRate * total;<br>
+    //change #response to tell the tip amount<br>
+    $("#q-one").html("The tip rate you entered is " + tipRate + ". Your tip is $" + tipAmount+ ".");<br>
+}<br>
+ tipCalculator2(50.00, 0.2);<br>
 
     </code>
 </body>

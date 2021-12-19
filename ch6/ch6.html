@@ -14,7 +14,7 @@
     <div class="sidenav">
       <ul>
        <li><a href="../index.html">Home</a></li>
-       <li><a href="../project.html">Project</a></li>
+       <li><a href="../project/project.html">Project</a></li>
      </ul>
     </div>
 
@@ -22,22 +22,190 @@
 
 <div class="content">
   <h1>Chapter 6</h1>
-
+<p>1. Write a function that takes an array of integers and, using .map(), returns an array of those integers, doubled. So if we give it [1, 2, 3], we receive, in turn, [2, 4, 6].<br>
+  2. Add functionality to the weapons examples above so that the final result is “bo, katana, nunchaku, and sai.”</p>
 
 
 <body>
-  <h1>This is my project!</h1>
+    
+    
+<h1>Exercises</h1>
+    <div id="q-one">This is the #response div.</div><br>
+    <div id="q-two">This is the #response div.</div>
+
+    <h1>Chapter Examples</h1>    
+    <!--<div id="upper-response">This is the #response div.</div><br>-->
+    <div id="upper-response2">This is the #response div.</div><br><br>
+
+    <div id="turtle-response">This is the #response div.</div><br>
+    <div id="turtle-response2">This is the #response div.</div><br>
+    <div id="turtle-response3">This is the #response div.</div><br>
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="../ch6/ch6.js"></script>
-    <div id="response">This is the #response div.</div>
 
-    <p></p>
-  <br><br>
-  <code>console.log("Hello, World!");<br><br>
+    <h1>Console</h1><br>
+    <img src="../ch6/ch6_results.png"><br><br>
+    <h1>Coding</h1>
+  <br>
+  <code>
+    //Return Section<br>
+let f;<br>
+f = function(){<br>
+    return "I am a return value.";<br>
+}<br>
+f();<br>
 
-    //Get console.log() to log a string that includes a backslash.<br>
-    console.log("Why hello there \"stranger\"!");<br><br>
+let makeFullName, hughessFullName;<br>
+makeFullName = function(firstName, lastName){<br>
+    firstName + " " + lastName;<br>
+}<br>
+hughessFullName = makeFullName("Langston", "Hughes");<br>
+console.log("Is your name " + hughessFullName + "?");<br><br>
+
+let makeFullName2, hughessFullName2;<br>
+makeFullName2 = function(firstName, lastName){<br>
+    return firstName + " " + lastName;<br>
+}<br>
+hughessFullName2 = makeFullName2("Langston", "Hughes");<br>
+console.log("Is your name " + hughessFullName2 + "?");<br><br>
+
+let turtles, sortedReversedTurtles;<br>
+turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];<br>
+sortedReversedTurtles = turtles.sort().reverse();<br><br>
+
+let turtlesWithSplinter, reversedTurtlesWithoutSplinter;<br>
+turtlesWithSplinter = ["Leonardo", "Donatello", "Raphael", "Michelangelo", "Splinter"];<br>
+//results in an error<br>
+//reversedTurtlesWithoutSplinter = turtlesWithSplinter.pop().reverse();<br><br>
+
+
+//Iterating section<br>
+/*<br>
+let userString, upperCaseMinusE, upperCasedString;<br>
+userString = prompt("What do you want to UPPeRCASe?");<br>
+upperCaseMinusE = function(string){<br>
+    let result;<br>
+    result= "";<br>
+    for(let i = 0; i <string.length; i = i +1){<br>
+        let letter;<br>
+        letter = string[i];<br>
+        if(letter === "e"){<br>
+            result = letter;<br>
+        } else {<br>
+            result = letter.toUpperCase();<br>
+        }<br>
+    }<br>
+    return result;<br>
+};<br>
+upperCaseString = upperCaseMinusE(userString);<br>
+$("#upper-response").html(upperCasedString);*/<br><br>
+
+let userString2, upperCaseMinusE2, upperCasedString2;<br>
+userString2 = prompt("What do you want to UPPeRCASe?");<br>
+upperCaseMinusE2 = function(string){<br>
+    let result2;<br>
+    result2 = "";<br>
+    for(let i = 0; i < string.length; i = i + 1){<br>
+        let letter2;<br>
+        letter2 = string[i];<br>
+        if (letter2 === "e"){<br>
+            //changed line from previous code<br>
+            result2 = result2 + letter2;<br>
+        } else {<br>
+            //changed line from previous code<br>
+            result2 = result2 + letter2.toUpperCase()<br>
+        }<br>
+    }<br>
+    return result2;<br>
+};<br>
+upperCasedString2 = upperCaseMinusE2(userString2);<br>
+$("#upper-response2").html(upperCasedString2);<br><br>
+
+//Array of Objects<br>
+upperCaseMinusE = function(string){<br>
+    let result, stringArray;<br>
+    result = "";<br>
+    stringArray = string.split("");<br>
+    //forEach() only works on arrays!<br>
+    //Converting the string into an array<br>
+    stringArray.forEach(function(letter){<br>
+        if(letter === "e"){<br>
+            result = result + letter;<br>
+        } else {<br>
+            result = result + letter.toUpperCase();<br>
+        }<br>
+    })<br>
+    return result;<br>
+};<br><br>
+
+//Creating JS Objects<br>
+//each turtle has 3 properties<br>
+/*let leonardo, donatello, raphael, michelangelo, turtles, weapons;<br>
+leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};<br>
+donatello = {name: "Donatello", color: "purple", weapon: "bo"};<br>
+raphael = {name: "Raphael", color: "red", weapon: "sai"};<br>
+michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchucks"};<br>
+turtles = [leonardo, donatello, raphael, michelangelo];<br>
+weapons = "";<br>
+turtles.forEach(function(turtle){<br>
+    weapons = weapons + turtle.weapon + " ";<br>
+  })<br>
+$("#response").html(weapons);*/<br><br>
+
+//Mapping & Filtering<br>
+//.map() for whenever you want to build an array out of another array.<br>
+let leonardo, donatello, raphael, michelangelo, allTurtles, weapons, allNames, allColors;<br>
+leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};<br>
+donatello = {name: "Donatello", color: "purple", weapon: "bo"};<br>
+raphael = {name: "Raphael", color: "red", weapon: "sai"};<br>
+michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchucks"};<br>
+allTurtles = [leonardo, donatello, raphael, michelangelo];<br>
+allColors = allTurtles.map(function(turtle){<br>
+    return turtle.color;<br>
+}).sort().join(", ");<br>
+$("#turtle-response").html(allColors);<br><br>
+
+//returns list of names<br>
+let names;<br>
+names = allTurtles.map(function(turtle){<br>
+    return turtle.name;<br>
+}).sort().join(", ");<br>
+$("#turtle-response2").html(names);<br><br>
+
+//returns list of names with 'o'<br>
+let namesWithO;<br>
+names = allTurtles.map(function(turtle){<br>
+    return turtle.name;<br>
+}).sort();<br>
+namesWithO = names.filter(function(name){<br>
+    return name.includes("o");<br>
+}).join(", ");<br>
+$("#turtle-response3").html(namesWithO);<br><br>
+
+//Exercises<br>
+//Write a function that takes an array of integers and, using .map(),<br>
+//returns an array of those integers, doubled. So if we give it [1, 2, 3], <br>
+//we receive, in turn, [2, 4, 6].<br>
+let integerArray, double;<br>
+integerArray = [1, 2, 3];<br>
+double = integerArray.map(function(value){<br>
+    return value * 2;<br>
+}).sort().join(", ");<br>
+$("#q-one").html("The doubled version of integerArray [" + integerArray + "] is [" + double + "].");<br><br>
+
+//Add functionality to the weapons examples above <br>
+//so that the final result is “bo, katana, nunchaku, and sai.”<br>
+//let leonardo, donatello, raphael, michelangelo, allTurtles, weapons;<br>
+leonardo = {name: "Leonardo", color: "blue", weapon: "katana"};<br>
+donatello = {name: "Donatello", color: "purple", weapon: "bo"};<br>
+raphael = {name: "Raphael", color: "red", weapon: "sai"};<br>
+michelangelo = {name: "Michelangelo", color: "blue", weapon: "nunchucks"};<br>
+allTurtles = [leonardo, donatello, raphael, michelangelo];<br>
+weapons = allTurtles.map(function(turtle){<br>
+    return turtle.weapon;<br>
+}).sort().join(", ");<br>
+$("#q-two").html(weapons);<br>
     
 
     </code>

@@ -27,18 +27,60 @@
 
 <div class="content">
   <h1>Chapter 10</h1>
- <p>hmmm</p>
+ <p>Map is around the Brooklyn Bridge area. Taking walks here are fun with nice views. I also hang around this area a tad too much..</p>
 
  <div class="container">
-  <h1>Working with Leaflet</h1>
+  <h1>Brooklyn Bridge</h1>
   <div id="first-map" class="map"></div>
-  <p>Above, you can see a Leaflet map.</p>
+  <p>When it's not busy, you'll see mostly cyclists. On other ocassions, photoshoots, maybe influencers, and a local hanging around.</p><br><br>
 </div>
 
 
 <body>
-  <br><br>
-  <code>console.log("Hello, World!");<br><br>
+  <h1>Code for Chapter 10 exercise</h1>
+  <br>
+  <code>
+    let firstMap, tileLayer;<br>
+    firstMap = L.map("first-map");<br>
+    tileLayer = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
+        attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://carto.com/attribution'>CARTO</a>",
+        subdomains: "abcd",
+        maxZoom: 18
+      });<br><br>
+    
+    //Map to show what part to show<br>
+    tileLayer.addTo(firstMap);<br>
+    firstMap.setView([40.7058, -73.9967], 15);<br><br>
+    
+    
+    let brooklynBridge, brooklynBridgeMarker;<br>
+    let tenThousandth, tenThousandthPolygon, thousandth, thousandthPolyline;<br>
+    brooklynBridge = L.latLng(40.7058, -73.9967);<br>
+    brooklynBridgeMarker = L.marker(brooklynBridge).addTo(firstMap);<br>
+    tenThousandth = [[40.7079, -73.9994], [40.7033, -73.9938], [40.7033, -73.9930], [40.7082, -73.9991]];<br>
+    tenThousandthPolygon = L.polygon(tenThousandth, {<br>
+      color: "#0c1445",<br>
+      fillColor: "#0c1445"<br>
+    }).addTo(firstMap);<br><br>
+    
+    thousandth = [[brooklynBridge.lat + 0.0001, brooklynBridge.lng + 0.0001],<br>
+                  [brooklynBridge.lat + 0.0001, brooklynBridge.lng - 0.0001],<br>
+                  [brooklynBridge.lat - 0.0001, brooklynBridge.lng - 0.0001],<br>
+                  [brooklynBridge.lat - 0.0001, brooklynBridge.lng + 0.0001]];<br>
+    thousandthPolyline = L.polyline(thousandth, {<br>
+        color: "#d33682"<br>
+    }).addTo(firstMap);<br><br>
+                          
+    let circle;<br>
+    circle = L.circle(brooklynBridge, {<br>
+        radius: 500,<br>
+        color: "#d7798b",<br>
+        fillColor: "#d7798b",<br>
+        opacity: 0.9,<br>
+        fillOpacity: 0.25<br>
+    }).addTo(firstMap);<br><br>
+    
+    brooklynBridgeMarker.bindPopup("Took a walk on the Brooklyn Bridge in the wee morning hours.");
 
     </code>
 

@@ -12,7 +12,7 @@
     <div class="sidenav">
       <ul>
        <li><a href="../index.html">Home</a></li>
-       <li><a href="../project.html">Project</a></li>
+       <li><a href="../project/project.html">Project</a></li>
      </ul>
     </div>
 
@@ -20,29 +20,43 @@
 
 <div class="content">
   <h1>Chapter 12</h1>
- <p>hmmm</p>
+  <p>1. Start drafting your own project’s content using Markdown in Atom. Commit the drafts and push them to GitHub.<br>
+    <p>Below this section.</p>
+    2. Add a <strong>#content</strong> container to your project’s HTML file. Have it load one of your Markdown files with jQuery and Markdown-it.
+  <p>Embedded in HTML file as a div id.</p>
 
+    <h1>Playing around with Markdown</h1>
  <div id="content"></div>
 
 <body>
   <br><br>
-  <code>console.log("Hello, World!");<br><br>
 
-    //Get console.log() to log a string that includes a backslash.<br>
-    console.log("Why hello there \"stranger\"!");<br><br>
-    
-    //
-    console.log("true");<br>
-    console.log("false");<br>
-    console.log(true);<br>
-    console.log(false);<br><br>
-    
-    //add a string to a number<br>
-    console.log("hello" + 2);<br><br>
-    
-    //add a number to a string<br>
-    console.log(2 + "hello");<br>
+  <h1>Code of Markdown</h1><br>
+  <code>
+    hi there.<br><br>
+
+## and hello forever<br>
+### and ever<br>
+##### and evvveeerrr<br>
+<br>
+--- <br>
+<br>
+this is an interesting [website](https://www.gnoosic.com) to find new music.
+<br>
+<section>Here's a happy doggo!</section>
+<br>
+![An image](../ch12/doggo.jpg)[^1]
+<br>
+[^1] Taken in Croatia. _(To indicate a footnote)_
+<br>
+Here's a **cool** list of things:<br>
+- air fryers 
+- switchbot 
+- cats 
+
+
     </code>
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>

@@ -1,3 +1,33 @@
+.parallax {
+  /* The image used */
+  background: url('../project/video.mp4') no-repeat fixed center;
+  overflow: hidden;
+
+  /* Full height */
+  height: 900px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-2 {
+  /* The image used */
+  background: url('../project/video.mp4') no-repeat fixed center;
+  overflow: hidden;
+
+  /* Full height */
+  height: 400px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -29,6 +59,11 @@ ul {
     margin-left: 160px; /* Same as the width of the sidebar */
     padding: 0px 10px;
   }
+
+.nav-link {
+    color: #fff;
+    background-color: #002269;
+}
 
 /* The sidebar menu */
 .sidenav {
@@ -77,6 +112,29 @@ h1 {
   color: #fff;
 }
 
+.project{
+  padding: 10px;
+  font-size: 24px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 5px;
+  display: block;
+  width: 960px;
+}
+
+.project-header{
+  display: inline-flex;
+  padding: 7px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #002269;
+}
+img { 
+	float: right;
+	margin: 10px;
+}
+
 table, th, td {
   /*display: inline-flex;*/
   padding: 7px;
@@ -84,7 +142,7 @@ table, th, td {
   background-color: #000;
   border: 7px solid black;
   color: #fff;
-  max-width: 50px;
+  /*max-width: 50px;*/
   text-align: center;
 }
 

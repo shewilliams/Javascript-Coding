@@ -5,8 +5,6 @@
   <meta charset="utf-8">
   <title>Sheryl's Code for Chapter 5</title>
   <link rel="stylesheet" href="../style.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="../ch5/ch5.js"  type="module"></script>
 </head>
 
 <div style="width: 100%">
@@ -14,7 +12,7 @@
     <div class="sidenav">
       <ul>
        <li><a href="../index.html">Home</a></li>
-       <li><a href="../project.html">Project</a></li>
+       <li><a href="../project/project.html">Project</a></li>
      </ul>
     </div>
 
@@ -22,20 +20,125 @@
 
 <div class="content">
   <h1>Chapter 5</h1>
- <p>hmmm</p>
+ <p>1. Write a function that always returns the last item in whatever array you pass it.<br>
+  2. Numbers also have methods and properties. Look them up at MDN and change your webpage so that it asks for a number and tells you if it is an integer or not.</p>
 
 
 
 <body>
-  <div id="response">This is the #response div.</div>
-  <p id="response">Look!</p>
-  
-  <div id="test"></div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="../ch5/ch5.js"  type="module"></script>
 
-  <br><br>
-  <code>console.log("Hello, World!");<br><br>
+  <h1>Exercises</h1><br>
+  <div id="q-one">This is the #response div.</div><br>
+  <div id="q-two">This is the #response div.</div><br><br>
+
+  <h1>Chapter Examples</h1>
+  <div id="letters"></div><br>
+  <div id="response1">This is the #response div.</div><br>
+  <div id="response">This is the #response div.</div>
+
+
+  
+
+  <h1>Console</h1>
+  <img src="../ch5/ch5_results.png"><br><br>
+  <br>
+  <h1>Coding</h1><br>
+
+  <code>//Arrays Section<br>
+let arrayOfStrings, arrayOfNumbers, arrayMixed;<br>
+arrayOfStrings = ["a", "b", "c"];<br>
+arrayOfNumbers = [1, 2, 3];<br>
+arrayMixed = ["a", 1, null, true, arrayOfNumbers, [4.5, 5.6]];<br>
+$("#letters").html("The position of arrayOfStrings is " + arrayOfStrings[2] + ".");<br><br>
+
+//Objects Section<br>
+let myBurritoObject;<br>
+myBurritoObject = {<br>
+    tortilla: "wheat",<br>
+    guacamole: true,<br>
+    beans: "pinto",<br>
+    habaneroSauceSquirts: 3<br>
+};<br>
+//$("#response1").html("The object of myBurritoObject is " + myBurritoObject["tortilla"] + ".");<br>
+$("#response1").html("The object of myBurritoObject is " + myBurritoObject.tortilla + ".");<br><br>
+
+let arrayOfStrings2;<br>
+arrayOfStrings2 = ["a", "b", "c"];<br>
+$("#response").html(arrayOfStrings2.length);<br><br>
+
+//Methods Section<br>
+let myHabaneroSauceSquirts, myBurritoObject2;<br>
+myHabaneroSauceSquirts = 3;<br>
+myBurritoObject2 = {<br>
+    tortilla: "wheat",<br>
+    guacamole: true,<br>
+    beans: "pinto",<br>
+    habaneroSauceSquirts: myHabaneroSauceSquirts,<br>
+    spiciness: function(){<br>
+        if(myHabaneroSauceSquirts > 0){<br>
+            alert("This is a spicy burrito!");<br>
+        } else{<br>
+            alert("This is a mild burrito.");<br>
+        }<br>
+    }<br>
+};<br>
+$("#response").html("Your burrito has " + myBurritoObject2.habaneroSauceSquirts + " squirts of habanero.");<br>
+myBurritoObject2.spiciness();<br><br>
+
+let turtles, sortedTurtles, reversedTTurtles, turtleNames;<br>
+turtles = ["Leonardo", "Donatello", "Raphael", "Michelangelo"];<br>
+sortedTurtles = turtles.sort();<br>
+reversedTTurtles = turtles.reverse();<br>
+turtleNames = turtles.join(" ");<br>
+turtles.push("Splinter");<br>
+turtles.pop();<br>
+console.log(turtles);<br><br>
+
+//Strings as Arrays<br>
+let string, firstLetter, stringLength;<br>
+string = "This is just a string.";<br>
+firstLetter = string[0];<br>
+stringLength = string.length;<br>
+let uppercaseString, replacedString;<br>
+uppercaseString = string.toUpperCase();<br>
+replacedString = string.replace("string", "pipe");<br>
+console.log(string);<br>
+console.log(replacedString);<br><br>
+
+//Exercises<br>
+//Write a function that always returns the last item in whatever array you pass it.<br>
+let theLastOne;<br>
+theLastOne = function(weirdArray){<br>
+    if(weirdArray == null){<br>
+        return 0;<br>
+    } else {<br>
+        return $("#q-one").html("The last element of weirdArray is [" + weirdArray[weirdArray.length - 1] + "].");<br>
+    }<br>
+}; <br>
+console.log(theLastOne(["weird", "weirdest", "weirder", "not weird"]));<br><br>
+
+
+//Numbers also have methods and properties. <br>
+//Look them up at MDN and change your webpage so that it <br>
+//asks for a number and tells you if it is an integer or not.<br>
+let isItAnInteger;<br>
+let numberResponse;<br>
+numberResponse = prompt("Enter a number.");<br>
+numberResponse = Number(numberResponse);<br>
+isItAnInteger = function(){<br>
+    if(Number.isInteger(numberResponse)){<br>
+        return $("#q-two").html("You entered an integer!");<br>
+    } else {<br>
+        return $("#q-two").html("Sorry, that number is not an integer!");<br>
+    }<br>
+};<br>
+console.log(isItAnInteger());<br>
+
     
     </code>
+
 </body>
 </div>
 </div>

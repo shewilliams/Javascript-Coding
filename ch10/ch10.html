@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../style.css">
   <script src="/ch10.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
  crossorigin=""/>
   <link rel="stylesheet" href="leaflet.css" />
@@ -19,7 +19,7 @@
     <div class="sidenav">
       <ul>
        <li><a href="../index.html">Home</a></li>
-       <li><a href="../project.html">Project</a></li>
+       <li><a href="../project/project.html">Project</a></li>
      </ul>
     </div>
 
@@ -27,8 +27,8 @@
 
 <div class="content">
   <h1>Chapter 10</h1>
- <p>hmmm</p>
-
+ <p>1. Create two new files, derive.html and derive.js. Have them include a Leaflet map with the two dérives you made for class drawn on them. Or it can be two walks you’ve taken, if you’re not in my class. The dérives should be different colors. Save, commit, and push to GitHub when you’re done. Use this site’s coordinate catcher to quickly get your coordinates. Just click on the map, and it will give you the correct latitude and longitude.</p>
+<p>Here is a link to the <a href="../ch10/derive.html">derive.html</a> and <a href="../ch10/derive.js">derive.js</a> .</p>
  <div class="container">
   <h1>Working with Leaflet</h1>
   <div id="first-map" class="map"></div>
@@ -37,8 +37,55 @@
 
 
 <body>
+  <h1>JavaScript Code for Chapter 10</h1>
   <br><br>
-  <code>console.log("Hello, World!");<br><br>
+  <code>
+    let firstMap, tileLayer;<br>
+firstMap = L.map("first-map");<br>
+tileLayer = L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {
+    attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> &copy; <a href='http://carto.com/attribution'>CARTO</a>",
+    subdomains: "abcd",
+    maxZoom: 18
+  });<br><br>
+
+//Map to show what part to show<br>
+tileLayer.addTo(firstMap);<br>
+firstMap.setView([40.730833, -73.9975], 16);<br><br>
+/*<br>
+//add a marker and popup<br>
+let bobstLibrary;<br>
+bobstLibrary = L.marker([40.729444, -73.997222]);<br>
+bobstLibrary.addTo(firstMap);<br>
+bobstLibrary.bindPopup("This is Bobst Library.");<br><br>
+
+let eiffelTower;<br>
+eiffelTower = L.latLng(48.858222, 2.2945);<br>
+firstMap.panTo(eiffelTower);*/<br><br>
+
+let washingtonSquarePark, washingtonSquareParkMarker;<br>
+let tenThousandth, tenThousandthPolygon, thousandth, thousandthPolyline;<br>
+washingtonSquarePark = L.latLng(40.730833, -73.9975);<br>
+washingtonSquareParkMarker = L.marker(washingtonSquarePark).addTo(firstMap);<br>
+tenThousandth = [[40.7307, -73.9976], [40.7307, -73.9974], [40.7309, -73.9974], [40.7309, -73.9976]];<br>
+tenThousandthPolygon = L.polygon(tenThousandth, {<br>
+  color: "#268bd2",<br>
+  fillColor: "#fdf6e3"<br>
+}).addTo(firstMap);<br><br>
+
+thousandth = [[washingtonSquarePark.lat + 0.001, washingtonSquarePark.lng + 0.001],<br>
+              [washingtonSquarePark.lat + 0.001, washingtonSquarePark.lng - 0.001],<br>
+              [washingtonSquarePark.lat - 0.001, washingtonSquarePark.lng - 0.001],<br>
+              [washingtonSquarePark.lat - 0.001, washingtonSquarePark.lng + 0.001]];<br>
+thousandthPolyline = L.polyline(thousandth, {color: "#d33682"}<br>
+                      ).addTo(firstMap);<br><br>
+                      
+let circle;<br>
+circle = L.circle(washingtonSquarePark, {radius: 100,<br>
+                                         color: "#859900",<br>
+                                         fillColor: "#cb4b16",<br>
+                                         opacity: 0.9,<br>
+                                         fillOpacity: 0.25}<br>
+          ).addTo(firstMap);<br>
 
     </code>
 

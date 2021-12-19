@@ -26,7 +26,8 @@ $.getJSON("./prologue.json", function(data){
     let glossText, clickedWord, modernWord;
     clickedWord = $( this ).text();
     modernWord = $( this ).data("modern");
-    glossText = "<h2>You clicked on " + clickedWord + ", which means " + modernWord +"</h2>";
+    wikiLink = $( this ).data("url");
+    glossText = "<h2>You clicked on " + clickedWord + ", which means " + modernWord +".</h2>";
     if ($( this ).data("url")){
       glossText = glossText + "<h3>Read more on <a href='" + $( this ).data("url") + "'>Wikipedia</a>.</h3>";
     }

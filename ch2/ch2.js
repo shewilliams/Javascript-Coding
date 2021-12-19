@@ -84,8 +84,8 @@ demo = console.log(2 + "hello");
 
 //Use the statements to find billPlusTip above but have the response from
 //console.log() be “You should pay $12 because the service was good.”
-let tipRate, bill, billPlusTip;
-tipRate = 0.20;
-bill = 10.00;
-billPlusTip = bill + (tipRate * bill);
-console.log("You should pay" + billPlusTip + "because the service was good.");
+let tipRate2, bill2, billPlusTip2;
+tipRate2 = 0.20;
+bill2 = 10.00;
+billPlusTip2 = bill2 + (tipRate2 * bill2);
+console.log("You should pay $" + billPlusTip2 + " because the service was good.");

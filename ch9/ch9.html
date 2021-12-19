@@ -3,12 +3,12 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <title>Sheryl's Cofe for Chapter 2</title>
+  <title>Sheryl's Code for Chapter 9</title>
   <link rel="stylesheet" href="../style.css">
   <!--<script src="/ch9.js"></script>-->
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
   <!--<link rel="stylesheet" href="prologue.css">-->
 </head>
 
@@ -18,7 +18,7 @@
     <div class="sidenav">
       <ul>
        <li><a href="../index.html">Home</a></li>
-       <li><a href="../project.html">Project</a></li>
+       <li><a href="../project/project.html">Project</a></li>
      </ul>
     </div>
 
@@ -26,13 +26,18 @@
 
 <div class="content">
   <h1>Chapter 9</h1>
-  <h2><a href="../ch9/prologue.html">General Prologue</a></h2>
+  <p>1. Why can’t we simply do $( this ).modern to get the .modern property?<br>
+    <p>To get the .modern property, it has to be associated with an Object, which is a collection of properties. By using $(this), you can select the object to access that property.</p>
+    2. Fix the problem with the Prologue and get the glosses to appear.<br>
+    <p>In demonstration below.</p><br>
+    3. I added a "url" property to the JSON file. Rewrite the code for the Prologue so that the gloss also suggests taking you to Wikipedia if you like.<br>
+  <p>In demonstration below.</p></p><br>
 
 
 
 
   <div class="container">
-    <h1>The General Prologue of <em>The Canterbury Tales</em></h1>
+    <h1>The General Prologue of  <em> The Canterbury Tales</em></h1>
     <div id="intro">
       <p>Welcome to the first 18 lines of Chaucer’s “General 
         Prologue.” If you don’t recognize a word, just click 
@@ -49,7 +54,44 @@
   <script src="../ch9/prologue.js"></script>
 
   <br><br>
-  <code>console.log("Hello, World!");<br><br>
+  <h1>Coding</h1><br>
+  <code>
+    $("#glosses").html("<p>The glosses will go here.</p>");<br>
+    $.getJSON("./prologue.json", function(data){<br>
+      let prologueText;<br>
+      prologueText = "<blockquote><p>";<br>
+      data.lines.forEach(function(line){<br>
+        let lineText;<br>
+        lineText = "";<br>
+        line.forEach(function(word){<br>
+          let wordString, dataAttributes;<br>
+          wordString = word.text;<br>
+          dataAttributes = "";<br>
+          if (word.modern){<br>
+            dataAttributes = dataAttributes + " data-modern='" + word.modern + "'";<br>
+            if (word.url){<br>
+              dataAttributes = dataAttributes + " data-url='" + word.url + "'";<br>
+            }<br>
+            wordString = "<a href='#'" + dataAttributes + ">" + wordString + "</a>";<br>
+          }<br>
+          lineText = lineText + wordString + " ";<br>
+        });<br>
+        prologueText = prologueText + lineText + "<br/>";<br>
+      });<br>
+      prologueText = prologueText + "</p></blockquote>";<br>
+      $("#prologue").html(prologueText);<br>
+      $("#prologue a").click(function(){<br>
+        let glossText, clickedWord, modernWord;<br>
+        clickedWord = $( this ).text();<br>
+        modernWord = $( this ).data("modern");<br>
+        wikiLink = $( this ).data("url");<br>
+        glossText = "< h2 >You clicked on " + clickedWord + ", which means " + modernWord +".</ h2 >";<br>
+        if ($( this ).data("url")){<br>
+          glossText = glossText + "< h3 >Read more on <a href='" + $( this ).data("url") + "'>Wikipedia</a>.</ h3 >";<br>
+        }<br>
+        $("#glosses").html(glossText);<br>
+      });<br>
+    });<br>
     </code>
 </body>
 </div>

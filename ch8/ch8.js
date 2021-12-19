@@ -1,12 +1,8 @@
 //to hide paragraphs
 $(document).ready(function(){
     $("button").click(function(){
-      $("p").hide();
+      $("p:last").addClass("lead");
     });
   });
 
 $("#response").html("some string.");
-
-$("p").addClass("potato-paragraph"){
-
-}

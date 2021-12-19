@@ -13,7 +13,7 @@
     <div class="sidenav">
       <ul>
        <li><a href="../index.html">Home</a></li>
-       <li><a href="../project.html">Project</a></li>
+       <li><a href="../project/project.html">Project</a></li>
      </ul>
     </div>
 
@@ -21,17 +21,140 @@
 
 <div class="content">
   <h1>Chapter 3</h1>
- <p>hmmm</p>
+ <p>1. Write a program so that when you reload your page, it asks for a number and prints all the numbers from 1 to it, including it.<br>
+  2. Building on that program, create it so that instead of printing the number, it prints something like:<br><br>
+  
+  This is the #response div.<br>
+  1 is odd.<br>
+  2 is even.<br>
+  3 is odd.<br><br>
+  
+  3. Building on the previous program, have it print the same, except without that ugly “This is the #response div.” line.<br>
+  4. Write down what seem to be common mistakes you are making. Are you forgetting to add some aspect of the JavaScript syntax?
+  <p>At the moment, it's the comment coding. It's different between HTML, CSS, and JavaScript.</p><br></p>
 
 
 
 <body>
-  <div id="response">This is the #response div.</div>
+  <div id="response">This is the #response div.</div><br>
+  <div id="while-loop">This is the #while-loop div.</div><br>
+  <div id="for-loop">This is the #for-loop div.</div><br>
+
+  <div id="q-one">This is the #q-one div.</div><br>
+
+  <div id="q-two">This is the #q-two div.</div><br> 
+  <div id="q-three">Goodbye, ugly message. Here are the results!</div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="../ch3/ch3.js"></script>
 
+  <h1>Console</h1>
+  <img src="../ch3/ch3_results.png"><br><br>
+
+
   <br><br>
-  <code>console.log("Hello, World!");<br><br>
+  <h1>Coding</h1>
+  <code><br>
+    //If Statements section<br>
+if(true){<br>
+    console.log("Brilliant choice!")<br>
+}<br><br>
+
+let userInput;<br>
+userInput = "burrito";<br>
+if(userInput === "burrito"){<br>
+    console.log(userInput + "? Brilliant choice!")<br>
+}<br><br>
+
+let userInput2;<br>
+userInput2 = "samosa";<br>
+if(userInput2 !== "burrito"){<br>
+    console.log(userInput2 + "? Don't you want a burrito?");<br>
+}<br><br>
+
+let userInput3;<br>
+userInput3 = "samosa";<br>
+if(userInput3 === "burrito"){<br>
+    console.log(userInput3 + "? Brilliant choice!");<br>
+} else{<br>
+    console.log(userInput3 + "? Don't you want a burrito?");<br>
+}<br><br>
+
+//Embedding JS in a webpage<br>
+//in Chapter 3 HTML file<br>
+alert("scripts.js has loaded!");<br>
+$("#response1").html("scripts.js has loaded!");<br><br>
+
+/*let userInput4;<br>
+userInput4 = "samosa";<br>
+if(userInput4 === "burrito"){<br>
+    $("#response2").html(userInput4 + "? Brilliant choice!");<br>
+} else {<br>
+    $("#response2").html(userInput4 + "? Don't you want a burrito?");<br>
+}*/<br><br>
+
+let userInput5;<br>
+userInput5 = prompt("What do you want to have for dinner?", "Type your answer here.");<br>
+if(userInput5 === "burrito"){<br>
+    $("#response").html(userInput5 + "? Brilliant choice!");<br>
+} else {<br>
+    $("#response").html(userInput5 + "? Don't you want a burrito?");<br>
+}<br><br>
+
+/*Infinite loop!<br>
+//While loops<br>
+while (0 < 1){<br>
+    console.log("Zero is less than one.");<br>
+}*/<br><br>
+
+let i;<br>
+i = 1;<br>
+while(i < 4){<br>
+    $("#while-loop").append("<br />"+ i)<br>
+    i = i + 1<br>
+}<br><br>
+
+//For loops<br>
+for(let k = 1; k < 6; k = k + 1) {<br>
+    $("#for-loop").append("<br />" + k);<br>
+}<br><br>
+
+//Exercises<br>
+//Write a program so that when you reload your page, <br>
+//it asks for a number and prints all the numbers from 1 to it, including it.<br>
+let j, response;<br>
+response = prompt("Enter a number.")<br>
+j = 1;<br>
+while(j <= response){<br>
+    $("#q-one").append("<br />" + j)<br>
+    j = j + 1<br>
+}<br><br>
+
+//Building on that program, create it so that instead of printing the number, <br>
+//it prints something like: This is the #response div. 1 is odd. 2 is even. 3 is odd<br>
+for (j = 1; j <= response; j = j + 1){<br>
+    if(j % 2 === 0){<br>
+        $("#q-two").append("<br />" + j + " is even.")<br>
+    } else {<br>
+        $("#q-two").append("<br />" + j + " is odd.")<br>
+
+    }<br>
+}<br><br>
+
+//Building on the previous program, have it print the same, <br>
+//except without that ugly “This is the #response div.” line.<br>
+for (j = 1; j <= response; j = j + 1){<br>
+    if(j % 2 === 0){<br>
+        $("#q-three").append("<br />" + j + " is even.")<br>
+    } else {<br>
+        $("#q-three").append("<br />" + j + " is odd.")<br>
+
+    }<br>
+}<br><br>
+
+//Write down what seem to be common mistakes you are making. <br>
+//Are you forgetting to add some aspect of the JavaScript syntax?<br>
+//Comments in between HTML, CSS, and JS are all different.<br>
+
 
     </code>
 </body>

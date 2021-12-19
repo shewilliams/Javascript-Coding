@@ -12,7 +12,7 @@
     <div class="sidenav">
       <ul>
        <li><a href="../index.html">Home</a></li>
-       <li><a href="../project.html">Project</a></li>
+       <li><a href="../project/project.html">Project</a></li>
      </ul>
     </div>
 
@@ -20,29 +20,40 @@
 
 <div class="content">
   <h1>Chapter 13</h1>
- <p>hmmm</p>
+  <p>1. Draw (by hand) a wireframe for your web project. It can have multiple pages to show how the site reacts to different user interactions.<br>
+    <p>Below this section.</p>
+    2. Populate some < section >s in your project with Markdown.
+  <p>Also below. Check code section, if needed.</p>
 
  <div id="content"></div>
 
 <body>
   <br><br>
-  <code>console.log("Hello, World!");<br><br>
+  <h1>Code of Markdown</h1>
+  <code>
+    <br>
+    # Meteorites!<br>
+    <section>This is a project about meteorite landings throughout the world. The data includes the following: name, id, nametype, recclass (material of meteorite), mass (in g), fall (recorded as fell or founded), year (recorded), reclat, reclong.
+<br><br>
 
-    //Get console.log() to log a string that includes a backslash.<br>
-    console.log("Why hello there \"stranger\"!");<br><br>
-    
-    //
-    console.log("true");<br>
-    console.log("false");<br>
-    console.log(true);<br>
-    console.log(false);<br><br>
-    
-    //add a string to a number<br>
-    console.log("hello" + 2);<br><br>
-    
-    //add a number to a string<br>
-    console.log(2 + "hello");<br>
+The data will feature meteorites that weigh, at and over, 10kg (~20lbs).  [Convert CSV](https://www.convertcsv.com/csv-to-geojson.htm) will be used to convert the data from CSV to GeoJSON.
+<br><br>
+Data Source: [NASA Open Data](https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh)<br>
+</section>
+
+<br>
+# Sketches<br>
+<section> The sketches below indicate renderings of the project.</section><br>
+![First scroll](../project/first_scroll.png)<br>
+<section> This part will feature a summary of what the user should expect to see on this page.<br>
+</section>
+<br><br>
+![Second scroll](../project/second_scroll.png)<br>
+<section> This part will feature a map and the locations of the top 5 heaviest meteorites found. A brief history will be included.
+</section><br>
+
     </code>
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>

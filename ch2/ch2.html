@@ -14,7 +14,7 @@
       <div class="sidenav">
         <ul>
          <li><a href="../index.html">Home</a></li>
-         <li><a href="../project.html">Project</a></li>
+         <li><a href="../project/project.html">Project</a></li>
        </ul>
       </div>
 
@@ -23,18 +23,26 @@
   <div class="content">
     <h1>Chapter 2</h1></br>
    
-     <body>hmmm</body>
-
-  
-
+     <p><strong>1. Get console.log() to log a string that includes a backslash.</strong></br>
+<p>Results shown below in line 71.</p>
+<strong>2. What happens when you surround true or false with double quotes? Are they still booleans?</strong></br>
+      <p>Lines 74-77. The boolean values turn into a string when you add double quotes. They are no longer a boolean.</p>
+      <strong>3. What happens when you add a string to a number? What about the reverse? Why?</strong></br>
+      <p>The string is added to the number in the order they are set up. It looks like concatenation occurs. However if you remove the quotes, there is an error.</p>
+      <strong>4. Use the statements to find billPlusTip above but have the response from console.log() be “You should pay $12 because the service was good.”</strong>
+    <p>Results shown below in line 91.</p>
+<p></p>
+  <h1>Console</h1>
+<img src="../ch2/ch2_results.png">
   
     <br><br>
-    <code>console.log("Hello, World!");<br><br>
-
+    <h1>Coding</h1><br>
+    <code>
+      //Exercises<br>
       //Get console.log() to log a string that includes a backslash.<br>
       console.log("Why hello there \"stranger\"!");<br><br>
       
-      //
+      //What happens when you surround true or false with double quotes? Are they still booleans?<br>
       console.log("true");<br>
       console.log("false");<br>
       console.log(true);<br>
@@ -44,7 +52,15 @@
       console.log("hello" + 2);<br><br>
       
       //add a number to a string<br>
-      console.log(2 + "hello");<br>
+      demo = console.log(2 + "hello");<br><br>
+      
+      //Use the statements to find billPlusTip above but have the response from<br>
+      //console.log() be “You should pay $12 because the service was good.”<br>
+      let tipRate2, bill2, billPlusTip2;<br>
+      tipRate2 = 0.20;<br>
+      bill2 = 10.00;<br>
+      billPlusTip2 = bill2 + (tipRate2 * bill2);<br>
+      console.log("You should pay $" + billPlusTip2 + " because the service was good.");<br>
       </code>
  
 </div>
