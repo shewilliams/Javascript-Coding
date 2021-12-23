@@ -77,7 +77,7 @@ $.ajax({
       else if (tab === 'sikhote-alin') {
         map.flyTo([46.16, 134.6533], 5);
       }
-      else if (tab === 'mudrabilla') {
+      else if (tab === 'mundrabilla') {
         map.flyTo([-30.7833, 127.55], 5);
       }
       else if (tab === 'hoba') {
